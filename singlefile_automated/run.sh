@@ -1,0 +1,1 @@
+cat minimal.csv | sh csv2d3.sh
