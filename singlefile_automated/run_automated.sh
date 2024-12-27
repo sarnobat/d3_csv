@@ -1,25 +1,14 @@
 set -e
 
-<<<<<<< HEAD
-INPUT=/tmp/calls.csv
+INPUT=${1:-/tmp/calls.csv}
 #FILTER=$HOME/work/code_comprehension/filter.sh
 FILTER=/tmp/filter_public.sh
 # INPUT=/tmp/calls.csv
 # FILTER=$HOME/work/code_comprehension/filter.sh
-=======
-
-INPUT=/tmp/calls.csv
-#FILTER=$HOME/work/code_comprehension/filter.sh
-FILTER=/tmp/filter_public.sh
->>>>>>> 4a19e11392b49134951a59e712e0ea8e41f1b291
 DIR=$HOME/github/d3_csv/singlefile_automated/ 
 
 cat <<'EOF' > /tmp/csv2d3.sh
 set -e
-<<<<<<< HEAD
-
-=======
->>>>>>> 4a19e11392b49134951a59e712e0ea8e41f1b291
 
 cat /tmp/before.html | tee /tmp/out.html
 cat - | grep -v "source,target" | perl -pe 's{"?([^"]*)"?,"?([^"\n]*)"?}{  \{ source : "$1", target : "$2" \},}g' | tee -a /tmp/out.html
@@ -39,6 +28,7 @@ cat - \
 EOF
 
 cd $DIR
+pwd
 # ls $INPUT
 ls $FILTER
 ls before.html
